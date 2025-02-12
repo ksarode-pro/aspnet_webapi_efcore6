@@ -1,0 +1,6 @@
+@aspnet_webapi_efcore6_HostAddress = http://localhost:5139
+
+GET {{aspnet_webapi_efcore6_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
