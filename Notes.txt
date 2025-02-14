@@ -1,0 +1,39 @@
+kiransarode@Kirans-Mac-mini aspnet_webapi_efcore6 % dotnet ef migrations add InitialCreate                                           
+
+Could not execute because the specified command or file was not found.
+Possible reasons for this include:
+  * You misspelled a built-in dotnet command.
+  * You intended to execute a .NET program, but dotnet-ef does not exist.
+  * You intended to run a global tool, but a dotnet-prefixed executable with this name could not be found on the PATH.
+
+
+
+kiransarode@Kirans-Mac-mini aspnet_webapi_efcore6 % dotnet tool install --global dotnet-ef
+
+Tools directory '/Users/kiransarode/.dotnet/tools' is not currently on the PATH environment variable.
+If you are using zsh, you can add it to your profile by running the following command:
+
+cat << \EOF >> ~/.zprofile
+# Add .NET Core SDK tools
+export PATH="$PATH:/Users/kiransarode/.dotnet/tools"
+EOF
+
+And run `zsh -l` to make it available for current session.
+
+You can only add it to the current session by running the following command:
+
+export PATH="$PATH:/Users/kiransarode/.dotnet/tools"
+
+You can invoke the tool using the following command: dotnet-ef
+Tool 'dotnet-ef' (version '9.0.2') was successfully installed.
+
+
+
+kiransarode@Kirans-Mac-mini aspnet_webapi_efcore6 % dotnet ef migrations add InitialCreate
+
+Build started...
+Build succeeded.
+Done. To undo this action, use 'ef migrations remove'
+kiransarode@Kirans-Mac-mini aspnet_webapi_efcore6 % dotnet ef database update
+Build started...
+Build succeeded.
