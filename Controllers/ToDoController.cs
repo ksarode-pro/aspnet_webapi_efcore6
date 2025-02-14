@@ -38,6 +38,15 @@ namespace aspnet_webapi_efcore6.Controllers
                 }
                 return Ok(all_todos);
             }
+            else if (loadingType == "explicit")
+            {
+                all_todos = _dbcontext.TodoItems;
+                foreach (var todo in all_todos)
+                {
+                    _dbcontext.Entry(todo).Reference(x => x.User).Load();
+                }
+                return Ok(all_todos);
+            }
             all_todos = _dbcontext.TodoItems.AsNoTracking();
             return Ok(all_todos);
         }
