@@ -51,7 +51,7 @@ namespace aspnet_webapi_efcore6.Controllers
             return Ok(all_todos);
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public IActionResult Get([FromRoute] long id)
         {
             var item = _dbcontext.TodoItems.AsNoTracking().FirstOrDefault(x => x.Id == id);
