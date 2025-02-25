@@ -4,7 +4,14 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<AppDbContext>(options =>
+// Add DbContext for EF Core
+// builder.Services.AddDbContext<AppDbContext>(options =>
+// {
+//     options.UseSqlServer(builder.Configuration.GetConnectionString("ToDoConnection"));
+// });
+
+// Add DbContextPool for better performance
+builder.Services.AddDbContextPool<AppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("ToDoConnection"));
 });
