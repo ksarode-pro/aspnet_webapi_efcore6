@@ -1,0 +1,4 @@
+/in case using sql server on local machines
+//"ToDoConnection": "Server=.;Database=ToDo;User Id=sa;Password=K1r@n@sql;TrustServerCertificate=True;MultipleActiveResultSets=True;"
+//in case using sql server on docker. Make sute both app container and sql container should be in same network
+//"ToDoConnection": "Server=sql_server;Database=ToDo;User Id=sa;Password=K1r@n@sql;TrustServerCertificate=True;MultipleActiveResultSets=True;"

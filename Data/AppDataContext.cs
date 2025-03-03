@@ -10,6 +10,17 @@ namespace aspnet_webapi_efcore6.Data
         {
         }
 
+        //Enable proxies for Lazy loading
+        // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        // {
+        //     optionsBuilder.UseLazyLoadingProxies();
+        // }
+
+        // protected override void OnModelCreating(ModelBuilder modelBuilder)
+        // {
+        //     modelBuilder.Entity<TodoItem>().ToTable("ToDoItems");
+        // }
+
         public DbSet<TodoItem> TodoItems { get; set; }
         public DbSet<User> User { get; set; }
     }
